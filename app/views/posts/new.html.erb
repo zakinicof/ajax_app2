@@ -1,0 +1,7 @@
+<h1>新規投稿ページ</h1>
+<%= form_with url: "/posts", method: :post, local: true do |form| %>
+  <%# URLは/posts,メソッドはPOSTなので、postsコントローラーのcreateアクションに転送 %>
+  <%= form.text_field :content %>
+  <%# ここでparams[:content]となってparamsに格納されてcreateアクションに転送される %>
+  <%= form.submit "投稿する" %>
+<% end %>
