@@ -5,7 +5,10 @@
 <% end %>
 
 <% @posts.each do |post| %>
-  <div class="post">
+  <%# カスタムデータ属性メモのidを追加 %>
+  <div class="post" data-id=<%= post.id %> 
+  <%# 既読の有無を管理するcheckedカラムの情報を追加 %>
+  data-check=<%= post.checked %>>
     <div class="post-date">
       投稿日時：<%= post.created_at %>
     </div>
